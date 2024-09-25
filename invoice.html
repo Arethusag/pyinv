@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./invoice.css">
+</head>
+
+<body>
+
+    <div class="web-container">
+        <div class="page-container">
+            Page
+            <span class="page"></span>
+            of
+            <span class="pages"></span>
+        </div>
+
+        <!-- <div class="logo-container"> -->
+        <!--     <img style="height: 0px" src="logo.webp"> -->
+        <!-- </div> -->
+
+        <table class="invoice-info-container">
+            <tr>
+                <td rowspan="2" class="client-name">
+                    {{client_name}}
+                </td>
+                <td>
+                    {{company_name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{company_address}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Invoice Date: <strong>{{invoice_date}}</strong>
+                </td>
+                <td>
+                    {{company_city}}, {{company_state}} {{company_postal}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Invoice No: <strong>{{invoice_number}}</strong>
+                </td>
+                <td>
+                    {{company_email}}
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="line-items-container">
+            <thead>
+                <tr>
+                    <th class="heading-quantity">Qty</th>
+                    <th class="heading-description">Description</th>
+                    <th class="heading-price">Price</th>
+                    <th class="heading-subtotal">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{line_items}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="right">Subtotal:</td>
+                    <td class="bold">{{subtotal}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="right">Tax:</td>
+                    <td class="bold">{{tax}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="right">Total:</td>
+                    <td class="bold">{{total}}</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <table class="line-items-container has-bottom-border">
+            <thead>
+                <tr>
+                    <th>Payment Info</th>
+                    <th>Due By</th>
+                    <th>Total Due</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="payment-info">
+                        <div>
+                            GST No: <strong>{{gst_number}}</strong>
+                        </div>
+                    </td>
+                    <td class="large">{{due_date}}</td>
+                    <td class="large total">{{total}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <div class="footer-info">
+                <span>{{company_email}}</span> |
+                <span>{{company_phone}}</span> |
+                <span>{{company_website}}</span>
+            </div>
+            <div class="footer-thanks">
+                <img src="heart.png" alt="heart">
+                <span>Thank you!</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
